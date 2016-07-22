@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bmZ-6l-pVK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qea-QC-8AK">
+                                        <rect key="frame" x="28" y="20" width="272" height="164"/>
+                                        <color key="backgroundColor" red="1" green="0.78071271070000003" blue="0.51630290069999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="164" id="3Do-9Q-J74"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="COj-Kb-oIC">
+                                            <size key="itemSize" width="249" height="160"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OneCell" id="7Kb-BP-CXB" customClass="OneCollectionViewCell" customModule="TestCollection" customModuleProvider="target">
+                                                <rect key="frame" x="12" y="0.0" width="249" height="160"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="249" height="160"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OO7-kB-UZ8">
+                                                            <rect key="frame" x="8" y="8" width="117" height="30"/>
+                                                            <state key="normal" title="+"/>
+                                                            <connections>
+                                                                <action selector="btnNewCell:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WVU-cm-Pkr"/>
+                                                            </connections>
+                                                        </button>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UMp-4C-4MC">
+                                                            <rect key="frame" x="8" y="68" width="233" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="BYZ-38-t0r" id="ZGR-Oi-3Sw"/>
+                                                            </connections>
+                                                        </textField>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcw-JY-fch">
+                                                            <rect key="frame" x="125" y="8" width="116" height="30"/>
+                                                            <state key="normal" title="-"/>
+                                                            <connections>
+                                                                <action selector="btnRemoveCell:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sh5-pd-AGq"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="Qcw-JY-fch" secondAttribute="trailing" id="6hy-xE-ank"/>
+                                                    <constraint firstItem="Qcw-JY-fch" firstAttribute="top" secondItem="7Kb-BP-CXB" secondAttribute="topMargin" id="8HH-5t-FMe"/>
+                                                    <constraint firstItem="UMp-4C-4MC" firstAttribute="trailing" secondItem="7Kb-BP-CXB" secondAttribute="trailingMargin" id="Yd3-yL-Thn"/>
+                                                    <constraint firstItem="Qcw-JY-fch" firstAttribute="leading" secondItem="OO7-kB-UZ8" secondAttribute="trailing" id="abc-4t-edT"/>
+                                                    <constraint firstItem="Qcw-JY-fch" firstAttribute="width" secondItem="OO7-kB-UZ8" secondAttribute="width" id="crI-VX-jCx"/>
+                                                    <constraint firstItem="OO7-kB-UZ8" firstAttribute="top" secondItem="7Kb-BP-CXB" secondAttribute="topMargin" id="eQs-9H-gqT"/>
+                                                    <constraint firstItem="OO7-kB-UZ8" firstAttribute="leading" secondItem="7Kb-BP-CXB" secondAttribute="leadingMargin" id="hY2-0W-YPi"/>
+                                                    <constraint firstItem="UMp-4C-4MC" firstAttribute="top" secondItem="Qcw-JY-fch" secondAttribute="bottom" constant="30" id="odD-uR-cgh"/>
+                                                    <constraint firstItem="UMp-4C-4MC" firstAttribute="leading" secondItem="7Kb-BP-CXB" secondAttribute="leadingMargin" id="w43-SD-LvM"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="btnOneNewcell" destination="OO7-kB-UZ8" id="4fO-jP-TTn"/>
+                                                    <outlet property="btnRemovecell" destination="Qcw-JY-fch" id="kGH-Ni-p18"/>
+                                                    <outlet property="txtCollection" destination="UMp-4C-4MC" id="hL5-5h-J2T"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="tgc-v3-bbj"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="AE5-3M-KXW"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qea-QC-8AK" secondAttribute="trailing" constant="20" id="7oe-SJ-ujn"/>
+                                    <constraint firstItem="qea-QC-8AK" firstAttribute="top" secondItem="bmZ-6l-pVK" secondAttribute="top" constant="20" id="Lkq-Dq-C8W"/>
+                                    <constraint firstItem="qea-QC-8AK" firstAttribute="leading" secondItem="bmZ-6l-pVK" secondAttribute="leading" constant="28" id="r5F-hz-3xe"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bmZ-6l-pVK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Cyf-Jy-plc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bmZ-6l-pVK" secondAttribute="bottom" id="fYi-Bm-PVO"/>
+                            <constraint firstAttribute="trailing" secondItem="bmZ-6l-pVK" secondAttribute="trailing" id="h5R-ia-EH4"/>
+                            <constraint firstItem="bmZ-6l-pVK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="obb-CU-DZa"/>
+                            <constraint firstItem="bmZ-6l-pVK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="tP4-Jz-7wO"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Cyf-Jy-plc"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="collectionheight" destination="3Do-9Q-J74" id="hN8-a0-TJJ"/>
+                        <outlet property="cviewCollection1" destination="qea-QC-8AK" id="1ey-I4-Fwb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="172" y="401"/>
+        </scene>
+    </scenes>
+</document>
